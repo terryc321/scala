@@ -91,8 +91,39 @@ def main(): Unit = {
   println(b2)
   b2 ++= Array(8,13,21)
   println(b2)
-  
 
+  // trimEnd deprecated
+  b2.trimEnd(5)
+  b2.dropRight(5) // ArrayBuffer(1,1,2)
+  println(b2)
+
+  b2.insert(2,6) // insert 6 at index offset 2 in b2 array
+  println(b2)
+
+  b2.remove(2) // remove index 2
+  println(b2)
+
+  val c2 = b2.toArray
+  println(("c2=" , c2))
+
+  // multi dimensional arrays
+  val matrix = Array.ofDim[Double](3,4)// 3 rows 4 columns
+  println(matrix(2)(3))
+  matrix(2)(3)= 42
+  println(matrix)
+
+  // Java to scala collection conversions
+  //import scala.collection.JavaConversions
+  import scala.jdk.CollectionConverters.*
+  //import scala.jdk.CollectionConverters._
+  val list = new java.util.ArrayList[String]()
+  list.add("abc")
+  list.add("def")
+  list.add("ghi")
+  println(list)
+
+  println(list.toArray())
+  println(list.toArray().length)
 
   // do this last so we can see
   // we got here
