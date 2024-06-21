@@ -114,16 +114,61 @@ def main(): Unit = {
 
   // Java to scala collection conversions
   //import scala.collection.JavaConversions
-  import scala.jdk.CollectionConverters.*
-  //import scala.jdk.CollectionConverters._
-  val list = new java.util.ArrayList[String]()
-  list.add("abc")
-  list.add("def")
-  list.add("ghi")
-  println(list)
+  //import scala.jdk.CollectionConverters.*
 
-  println(list.toArray())
-  println(list.toArray().length)
+  // this below gives us List
+  import scala.jdk.CollectionConverters._
+
+  val list1 = new java.util.ArrayList[String]()
+  list1.add("abc")
+  list1.add("def")
+  list1.add("ghi")
+  println(list1)
+
+  println(list1.toArray())
+  println(list1.toArray().length)
+
+  //list1.toBuffer .... did not work
+
+  val map = new java.util.HashMap[ String, Int]
+  map.put("a",10)
+  println(map)
+  // println(map.toMap) ..... fail
+
+
+  // collections
+  //import scala.collection.immutable.List
+  val l1 = List(1,2,3)
+  println(l1)
+  val l2 = List()
+  println(l2)
+  println(l1  == Nil) // false
+  println(l2 == Nil) // false
+
+  val l3 = List(2,"a")
+  println(l3)
+  println(l3(1))
+  val l4 = List(1,-2,3,2,-1,0,3)
+  println(l4.sorted)
+  println(l4.sorted.reverse)
+  println(List("b","d").sorted)
+  //println(List(1,"a").sorted)
+  println(l4.sortWith((x,y) => x < y))
+  println(l4.sortWith((x,y) => x > y))
+  println(l4)
+
+  // mutable list
+  import scala.collection.mutable.ListBuffer
+  val lb = ListBuffer.empty[String]
+  lb += "b"
+  println(lb)
+  lb += ("c","d" , "e")
+  println(lb)
+  lb -= "d"
+  println(lb)
+  lb ++= List("f","g")
+  println(lb)
+
 
   // do this last so we can see
   // we got here
