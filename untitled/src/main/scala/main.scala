@@ -1,9 +1,11 @@
 @main
 //def main(args: Array[String] ): Unit = {
 def main(): Unit = {
+
+  /*
+
   println("Hello world!")
   println("here we go again !")
-  /*
    // language fundamentals
    var x = 10
    println(x)
@@ -253,7 +255,7 @@ def main(): Unit = {
   println("no yield .. gives")
   for ((k,v) <- scores) println((v,k))
   * 
-  *  */
+  * 
 
   // streams are lists  with lazy access to elements
   val st = (1 to 100).toStream
@@ -346,24 +348,88 @@ def main(): Unit = {
   println(list.mkString("|"))
   println(list.count(x => x * x > 1  ))
 
+  println(List(1,2,3) intersect List(2,3,4))
+  println(List(1,2,3) diff List(2,3,4))
+  println(List(1,2,3).permutations.toList)
+  println(List(1,2,3).combinations(2).toList)
+  println(List(List(1,2),List(3,4)).flatten)
+
+  // Conditionals
+
+  val x3 = 0
+  val y2 = if (x3>0) 1 else -1
+  println(y2)
+
+  println(if (x3>0) "plus" else -1)
+  println(if (x3 > 0) 1 else ())
+  // unit () is anything
+  println(if (x3 > 0) 1)
+
+  // loops
+  var sum = 0
+  while (sum < 10) {sum += 1 ; println("sum = " + sum) }
+  println(sum)
+
+  sum = 0
+  var k = 0
+  while (k < 10){
+    sum += k*k
+    k += 1
+  }
+
+  println(("sum k " , sum,k))
+
+  var sum1 = 0
+  var l = List(1,2,3,4,5)
+  for (e <- l) sum1 += e
+  println(sum1)
+
+  sum1 = 0
+  for (i <- 1 to 10) sum1 += i
+  println(sum1)
+
+  sum1 = 0
+  for (ch <- "Hello") sum1 += ch
+  println(sum1)
+
+  for (i <- 1 to 3; j <- 1 to 4) println("" + i + "," + j + " => " + (10 *i + j) + " ")
+  println("")
+
+  for (i <- 1 to 3; j <- 1 to 3 if (i != j)) println("" + i + "," + j + " => " + (10 *i + j) + " ")
+  println("")
+
+  
+  for (i <- 1 to 3; from = 4 - i ; j <- from to 3 )  print((10 * i + j) + " ")
+  println("")
+  
+   // i = 1  : from = 3 : j <- 3 to 3 ; 10 * i  + j  : i=1 j=3 13
+   // i = 2  : from = 2 : j <- 2 to 3 ; 10 * i  + j  : i=2 j=2 22 , j=3 23
+   // i = 3  : from = 1: j <- 1 to 3 ; 10 * i  + j   : i=3 j=1 31 , j=2 32 , j=3 33
+   // 13 22 23 31 32 33   
+
+  for (i <- 1 to 3; from = 4 - 1 ; j <- from to 3 )  print((10 * i + j) + " ")
+  println("")
+
+   *
+   * * *  */
 
 
-
-
-
-
-
-
-
-
-
-
-
+  val examp = new examples()
+  println()
+  examp.StringManipulations()
+  println()
+  examp.listAndMap() 
+  println()
+  examp.traverse()
+  println()
+  examp.conandloop()
 
 
   // do this last so we can see
   // we got here
-  println(".......finished .......")
+  println()
+  println()
+  println(".......finished .......AAA")
 }
 
 
