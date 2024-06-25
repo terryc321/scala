@@ -1,6 +1,7 @@
+
+
 @main
-//def main(args: Array[String] ): Unit = {
-def main(): Unit = {
+def main() : Unit = {
 
   /*
 
@@ -413,16 +414,15 @@ def main(): Unit = {
    *
    * * *  */
 
-
-  val examp = new examples()
+  val example = new Examples ()
+  example.StringManipulations()
   println()
-  examp.StringManipulations()
+  example.listAndMap()
   println()
-  examp.listAndMap() 
+  example.traverse()
   println()
-  examp.traverse()
+  example.conandloop()
   println()
-  examp.conandloop()
 
 
   // do this last so we can see
