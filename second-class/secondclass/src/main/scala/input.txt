@@ -1,0 +1,1 @@
+NAME=bala AGE=23 COUNTRY=Singapore
