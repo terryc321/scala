@@ -1,0 +1,111 @@
+
+object Summer :
+
+  def fact(n : BigInt):BigInt = 
+    if n < 2 then 1 else fact2(n, BigInt(1))  
+ 
+  def fact2(n : BigInt , r : BigInt):BigInt = 
+    if n < 2 then r else fact2(n-1 , r * n) 
+
+  def addInt(a:Int, b:Int): Int = {
+    var sum: Int = 0
+    println("entered into function addInt")
+    sum = a + b
+    return sum
+  }
+
+  def printInt(a: Int, b:Int) = {
+    println("vlaue of a = " + a )
+    println("value of b = "  + b)   
+  }
+ 
+  def main(args: Array[String]): Unit =
+    for arg <- args do {
+      println("arg + : " + fact(BigInt(arg)))
+    }
+    println("addInt 2 3 = " + addInt(2,3))
+    printInt(b = 3 , a = 2 )
+  
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+/*
+class foo {
+  def printTime() : Unit = {
+    println("this is the time !")
+    println("Time in nano seconds is " + System.nanoTime)
+  }
+  def time() = {
+    println("inside basic function time")
+    println("getting time in nanoseconds")
+    System.nanoTime
+  }
+  def delayed(t: => Long)  = {
+    println("entering into delayed method")
+    println("Param: " + t)
+    println("Exited from function")
+  }
+
+  def printStrings(args: Seq[String])  = {
+    println("Entering into function print string")
+    var i: Int = 0
+    println("Iterating in foreach loop")
+    for (arg <- args) {
+      println("arg value =" + arg + " at " + i)
+      i = i + 1
+    }
+  }
+
+
+}
+
+
+def msg = "I was compiled by Scala 3. :)"
+
+import scala.util.CommandLineParser
+
+given scala.util.CommandLineParser.FromString[Array[String]] with
+  def fromString(value: Array[String]) : Array[String]  = value
+
+def main(args: Array[String]): Unit =
+  val fobj = new foo()
+  //fobj.printStrings(args)
+  /*
+  val inc = (x:Int) => x + 1
+  var x = inc(7)
+  println("Hello world!")
+  println(msg)
+  val foo = new foo()
+  foo.printTime()
+  println(msg + msg)
+  println("a = " + a )
+  println("b = " + b )
+  println("anonymous function called " + x)
+  val fobj = new foo()
+  fobj.printTime()
+  val timeCapture = fobj.time()
+  println(timeCapture)
+
+  println("----")
+  val mul = (x:Int , y:Int) => x * y
+  println(mul(2,3))
+
+  println("this is only the function call")
+  fobj.time()
+
+  fobj.delayed(fobj.time())
+  println("\n\n\n ")
+   */
+
+ */
